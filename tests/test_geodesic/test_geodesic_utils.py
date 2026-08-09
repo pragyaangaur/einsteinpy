@@ -39,6 +39,7 @@ def test_P(g, g_prms, q, p, time_like, expected):
 
     assert_allclose(P, expected, atol=1e-8, rtol=1e-8)
 
+
 def _generic(x_vec, *params):
     """
     A contravariant metric with non-zero off-diagonal terms in every slot,
@@ -87,6 +88,7 @@ def test_P_satisfies_normalization(g, g_prms, q, p, time_like):
 
     assert_allclose(P[1:], p, atol=1e-8, rtol=1e-8)
     assert_allclose(P @ guu @ P, -int(time_like), atol=1e-10)
+
 
 @pytest.mark.parametrize(
     "x",
